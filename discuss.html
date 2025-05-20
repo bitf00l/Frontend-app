@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="discuss.css" />
+  <title>Let's Discuss</title>
+</head>
+<body>
+  <div class="get-in-touch-wrap">
+    <h2>Let's Discuss</h2>
+    <p>Fill out the form below and I'll get back to you as soon as possible</p>
+
+    <form id="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="firstName" placeholder="First Name" required />
+        </div>
+        <div class="form-group">
+          <input type="text" id="lastName" placeholder="Last Name" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email Address" required />
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="subject" placeholder="Subject" required />
+      </div>
+
+      <div class="form-group">
+        <textarea id="message" placeholder="Your Message" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <h4>Preferred Contact Method</h4>
+        <div class="checkbox-group">
+          <label><input type="radio" name="contactMethod" value="Email"> Email</label>
+          <label><input type="radio" name="contactMethod" value="Phone"> Phone</label>
+        </div>
+      </div>
+
+      <div class="form-group agreement-check">
+        <label>
+          <input type="checkbox" id="agreePolicy" required />
+          I agree to the<span class="highlight">Privacy Policy</span>and consent to being contacted.
+        </label>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <section class="discuss">
+      <div class="home-sci">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/bitf00l?tab=repositories"><i class='bx bxl-github'></i></a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      const agreePolicy = document.getElementById('agreePolicy');
+      if (!agreePolicy.checked) {
+        e.preventDefault();
+        alert("You must agree to the Privacy Policy before submitting.");
+      }
+    });
+  </script>
+</body>
+</html>
